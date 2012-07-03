@@ -15,13 +15,13 @@ using System.Windows.Shapes;
 namespace OptionTrader
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OrderBookTable : UserControl
     {
-        public MainWindow()
+        public OrderBookTable()
         {
-           InitializeComponent();
+            InitializeComponent();
         }
     }
 }
