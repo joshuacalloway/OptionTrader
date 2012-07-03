@@ -2,7 +2,62 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>    
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.Column="0">
+            <Label DockPanel.Dock="Top" Background="LightGray">Underlying</Label>
+            <ComboBox DockPanel.Dock="Bottom" IsEditable="True"></ComboBox>
+        </DockPanel>
+        <DockPanel Grid.Row="0" Grid.Column="1" >
+            <Label DockPanel.Dock="Top" Background="LightGray">Expiration</Label>
+            <ComboBox IsEditable="True"></ComboBox>
+        </DockPanel>
+        <DockPanel Grid.Row="0" Grid.Column="2" >
+            <Label DockPanel.Dock="Top" Background="LightGray">Strike</Label>
+            <ComboBox IsEditable="True"></ComboBox>
+        </DockPanel>
+        <DockPanel Grid.Row="0" Grid.Column="3" >
+            <Label DockPanel.Dock="Top" Background="LightGray">C/P</Label>
+            <ComboBox IsEditable="True"></ComboBox>
+        </DockPanel>
+        <FlowDocumentReader  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+        <FlowDocument>
+            <Table>
+                <Table.Columns>
+                    <TableColumn/>
+                    <TableColumn/>
+                    <TableColumn/>
+                    <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow Background="Gray">
+                            <TableCell>
+                                <Paragraph FontSize="12pt">---</Paragraph>                               
+                            </TableCell>
+                        <TableCell Background="Yellow">
+                            <Paragraph FontSize="12pt">PHLX</Paragraph>
+                        </TableCell>
+                        <TableCell Background="Yellow">
+                            <Paragraph FontSize="12pt">0.66</Paragraph>
+                        </TableCell>
+                        <TableCell Background="Yellow">
+                            <Paragraph FontSize="12pt">405</Paragraph>
+                        </TableCell>
+                    </TableRow> 
+                    </TableRowGroup>
+            </Table>
+            </FlowDocument>
+        </FlowDocumentReader>
+
+
     </Grid>
 </Window>
