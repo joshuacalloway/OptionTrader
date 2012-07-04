@@ -36,5 +36,15 @@ namespace OptionTrader
             row.price.Content = price;
             row.volume.Content = volume;
         }
+
+        private void Window_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.ToolBarTray.Height = 92;
+        }
+
+        private void Window_MouseLeave(object sender, MouseEventArgs e)
+        {
+            this.ToolBarTray.Height = 0;
+        }
     }
 }
