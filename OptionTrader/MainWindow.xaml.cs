@@ -27,7 +27,14 @@ namespace OptionTrader
 
         private void populateOrderBookTable()
         {
-            
+            populateOrderBookTableRow(this.BestBidBook.row0,  "PHLX", 0.4, 400);
+            populateOrderBookTableRow(this.BestBidBook.row1, "ISE", 0.45, 95);           
+
+        }
+        private void populateOrderBookTableRow(OrderBookTableRow row, string exchange, double price, int volume) {
+            row.exchange.Content = exchange;
+            row.price.Content = price;
+            row.volume.Content = volume;
         }
     }
 }

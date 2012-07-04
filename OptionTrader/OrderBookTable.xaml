@@ -10,15 +10,15 @@
     <ScrollViewer  VerticalScrollBarVisibility="Visible"  HorizontalScrollBarVisibility="Disabled" Height="195" CanContentScroll="True">
     <StackPanel>
 
-      <s2:OrderBookTableRow  />
-      <s2:OrderBookTableRow  />
-        <s2:OrderBookTableRow  />
-        <s2:OrderBookTableRow  />
-        <s2:OrderBookTableRow  />
-        <s2:OrderBookTableRow  />
-        <s2:OrderBookTableRow  />
-        <s2:OrderBookTableRow  />
-        <s2:OrderBookTableRow  />
+      <s2:OrderBookTableRow x:Name="row0"/>
+      <s2:OrderBookTableRow x:Name="row1" />
+        <s2:OrderBookTableRow x:Name="row2" />
+        <s2:OrderBookTableRow x:Name="row3" />
+        <s2:OrderBookTableRow x:Name="row4" />
+        <s2:OrderBookTableRow x:Name="row5" />
+        <s2:OrderBookTableRow x:Name="row6" />
+        <s2:OrderBookTableRow x:Name="row7" />
+        <s2:OrderBookTableRow x:Name="row8" />
 
     </StackPanel>
     </ScrollViewer>

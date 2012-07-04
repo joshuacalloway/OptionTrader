@@ -18,8 +18,8 @@
         </Grid.RowDefinitions>
             
         <Label Background="LightGray" FontSize="10pt" Margin="6,0">---</Label>
-        <Label Grid.Column="1" Grid.Row="0" Background="Yellow" FontSize="10pt">PHLX</Label>
-        <Label Grid.Column="2" Grid.Row="0" Background="Yellow" FontSize="10pt">0.66</Label>
-        <Label Grid.Column="3" Grid.Row="0" Background="Yellow" FontSize="10pt">400</Label>
+        <Label Grid.Column="1" Grid.Row="0" Background="Yellow" FontSize="10pt" x:Name="exchange">PHLX</Label>
+        <Label Grid.Column="2" Grid.Row="0" Background="Yellow" FontSize="10pt" x:Name="price">0.66</Label>
+        <Label Grid.Column="3" Grid.Row="0" Background="Yellow" FontSize="10pt" x:Name="volume">400</Label>
     </Grid>
 </UserControl>
