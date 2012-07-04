@@ -37,14 +37,36 @@ namespace OptionTrader
             row.volume.Content = volume;
         }
 
+        bool toolbarVisible = true;
+
         private void Window_MouseEnter(object sender, MouseEventArgs e)
         {
-            this.ToolBarTray.Height = 92;
+            if (!toolbarVisible) {
+                toolbarVisible = true;
+                this.ToolBarTray.Height = 75;
+                this.BestAskBook.Height -= 75;
+                this.BestBidBook.Height -= 75;
+                this.BestAskBook.ScrollViewer.Height -= 75;
+                this.BestBidBook.ScrollViewer.Height -= 75;
+            }
         }
 
         private void Window_MouseLeave(object sender, MouseEventArgs e)
         {
-            this.ToolBarTray.Height = 0;
+            if (toolbarVisible)
+            {
+                toolbarVisible = false;
+                this.ToolBarTray.Height = 0;
+                this.BestAskBook.Height += 75;
+                this.BestBidBook.Height += 75;
+                this.BestAskBook.ScrollViewer.Height += 75;
+                this.BestBidBook.ScrollViewer.Height += 75;
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

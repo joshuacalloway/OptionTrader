@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:s2="clr-namespace:OptionTrader"
-        Title="BAC - BAC CALL 08JUN12 07" Height="350" Width="450" MouseEnter="Window_MouseEnter" MouseLeave="Window_MouseLeave">
+        Title="BAC - BAC CALL 08JUN12 07" Height="350" Width="400" MouseEnter="Window_MouseEnter" MouseLeave="Window_MouseLeave" Loaded="Window_Loaded">
 
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
@@ -15,10 +15,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="200"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="23"/>
         </Grid.RowDefinitions>
-        <ToolBarTray Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="4" x:Name="ToolBarTray" Height="0">
+        <ToolBarTray Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="4" x:Name="ToolBarTray" Height="75">
             <ToolBar AllowDrop="True" IsManipulationEnabled="True" Height="23" Band="1" BandIndex="1" >
 
                 <StackPanel  Orientation="Horizontal" ToolBar.OverflowMode="Never" >
@@ -27,7 +27,7 @@
 
                         <ComboBox IsEditable="True" Text="JUN 08 2012" FontSize="10"></ComboBox>
 
-                        <ComboBox IsEditable="True" Text="7" FontSize="10"></ComboBox>
+                        <ComboBox IsEditable="True" Text="7" Width="50" FontSize="10"></ComboBox>
 
                         <ComboBox IsEditable="True" Text="CALL" FontSize="10"></ComboBox>
 
@@ -35,14 +35,14 @@
             </ToolBar>
             <ToolBar Band="2" BandIndex="1">
                 <StackPanel ToolBar.OverflowMode="Never" Background="LightGray" Orientation="Horizontal">
-                    <Button Background="Blue" FontSize="10">BUY</Button>
-                    <StackPanel Width="100" Orientation="Horizontal">
-                        <Label FontSize="10">Qty</Label>
-                        <ComboBox Width="50" IsEditable="True" FontSize="8"></ComboBox>
+                    <Button Background="Blue" Width="50" FontSize="10">BUY</Button>
+                    <StackPanel Width="105" Orientation="Horizontal">
+                        <Label Width="30" FontSize="10">Qty</Label>
+                        <ComboBox Width="75" IsEditable="True" FontSize="8"></ComboBox>
                     </StackPanel>
-                    <StackPanel Width="100" Orientation="Horizontal">
-                        <Label FontSize="10">Prc</Label>
-                        <ComboBox FontSize="10" Width="50" IsEditable="True"></ComboBox>
+                    <StackPanel Width="105" Orientation="Horizontal">
+                        <Label Width="30" FontSize="10">Prc</Label>
+                        <ComboBox FontSize="10" Width="75" IsEditable="True"></ComboBox>
                     </StackPanel>
                     <Button Background="Red" Width="50" FontSize="10">SEL</Button>
                     <Button Background="LightGray" Width="50" FontSize="10">Clr</Button>
@@ -62,9 +62,9 @@
             </ToolBar>
             <ToolBar Band="1" BandIndex="2">
                 <WrapPanel HorizontalAlignment="Center" Background="LightGray" Orientation="Horizontal" ToolBar.OverflowMode="Never">
-                    <Button FontSize="10">Cxl BB</Button>
-                    <Button FontSize="10">Cxl All</Button>
-                    <Button FontSize="10">Cxl BA</Button>
+                    <Button FontSize="12">Cxl BB</Button>
+                    <Button FontSize="12">Cxl All</Button>
+                    <Button FontSize="12">Cxl BA</Button>
                 </WrapPanel>
         </ToolBar>
 </ToolBarTray>
@@ -121,9 +121,10 @@
                 </Label>
             </StackPanel>
         </Grid>
+        
         <s2:OrderBookTable x:Name="BestBidBook" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></s2:OrderBookTable>
         <s2:OrderBookTable x:Name="BestAskBook" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"></s2:OrderBookTable>
 
-        <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">FLAT</Label>    
+        <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Height="23" FontSize="10">FLAT</Label>    
     </Grid>
 </Window>

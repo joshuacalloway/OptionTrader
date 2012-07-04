@@ -6,8 +6,8 @@
              mc:Ignorable="d" 
                      xmlns:s2="clr-namespace:OptionTrader"
              x:Name="OrderBookTableN"
-             d:DesignHeight="300" d:DesignWidth="200">
-    <ScrollViewer  VerticalScrollBarVisibility="Visible"  HorizontalScrollBarVisibility="Disabled" Height="195" CanContentScroll="True">
+             d:Height="Auto" d:Width="Auto">
+    <ScrollViewer x:Name="ScrollViewer" VerticalScrollBarVisibility="Visible"  HorizontalScrollBarVisibility="Disabled" Height="150" CanContentScroll="True">
     <StackPanel>
 
       <s2:OrderBookTableRow x:Name="row0"/>
