@@ -2,7 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:s2="clr-namespace:OptionTrader"
-        Title="BAC - BAC CALL 08JUN12 07" Height="450" Width="520">
+        Title="BAC - BAC CALL 08JUN12 07" Height="350" Width="520">
+    
     <Grid ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -15,26 +16,85 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="23"/>
         </Grid.RowDefinitions>
-        <DockPanel Grid.Row="0" Grid.Column="0">
-            <Label DockPanel.Dock="Top" Background="LightGray">Underlying</Label>
-            <ComboBox DockPanel.Dock="Bottom" IsEditable="True" Text="BAC"></ComboBox>
-        </DockPanel>
-        <DockPanel Grid.Row="0" Grid.Column="1" >
-            <Label DockPanel.Dock="Top" Background="LightGray">Expiration</Label>
-            <ComboBox IsEditable="True" Text="JUN 08 2012"></ComboBox>
-        </DockPanel>
-        <DockPanel Grid.Row="0" Grid.Column="2" >
-            <Label DockPanel.Dock="Top" Background="LightGray">Strike</Label>
-            <ComboBox IsEditable="True" Text="7"></ComboBox>
-        </DockPanel>
-        <DockPanel Grid.Row="0" Grid.Column="3" >
-            <Label DockPanel.Dock="Top" Background="LightGray">C/P</Label>
-            <ComboBox IsEditable="True" Text="CALL"></ComboBox>
-        </DockPanel>
-        <Grid Grid.Row="1" Background="LightGray" Grid.Column="0"  Grid.ColumnSpan="4">
+        <ToolBar Grid.Row="0" Grid.Column="0" Height="23"  Grid.ColumnSpan="4" AllowDrop="True" IsManipulationEnabled="True">
+            <StackPanel Orientation="Horizontal" >
+            <DockPanel Width="150">
+                <Label DockPanel.Dock="Top" Background="LightGray">Underlying</Label>
+                <ComboBox DockPanel.Dock="Bottom" IsEditable="True" Text="BAC"></ComboBox>
+            </DockPanel>
+            <DockPanel Width="150">
+                <Label DockPanel.Dock="Top" Background="LightGray">Expiration</Label>
+                <ComboBox IsEditable="True" Text="JUN 08 2012"></ComboBox>
+            </DockPanel>
+            <DockPanel Width="100">
+                <Label DockPanel.Dock="Top" Background="LightGray">Strike</Label>
+                <ComboBox IsEditable="True" Text="7"></ComboBox>
+            </DockPanel>
+            <DockPanel Width="100">
+                <Label DockPanel.Dock="Top" Background="LightGray">C/P</Label>
+                <ComboBox IsEditable="True" Text="CALL"></ComboBox>
+            </DockPanel>
+        </StackPanel>
+            <Grid Background="LightGray" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="23"/>
+                    <RowDefinition Height="23"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Background="LightGray" Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="4">
+                    <Button Background="Blue">BUY</Button>
+                    <StackPanel Width="100" Orientation="Horizontal">
+                        <Label>Qty</Label>
+                        <ComboBox Width="75" IsEditable="True"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Width="100" Orientation="Horizontal">
+                        <Label>Price</Label>
+                        <ComboBox Width="75" IsEditable="True"></ComboBox>
+                    </StackPanel>
+                    <Button Background="Red">SELL</Button>
+                    <Button Background="LightGray">Clear</Button>
+                </StackPanel>
+                <StackPanel Background="LightGray" Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="4">
+                    <StackPanel Width="100" Orientation="Horizontal">
+                        <Label>O/C</Label>
+                        <ComboBox Width="75" IsEditable="True" Text="CLOSE"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Width="100" Orientation="Horizontal">
+                        <Label>TIF</Label>
+                        <ComboBox Width="75" IsEditable="True" Text="DAY"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Width="100" Orientation="Horizontal">
+                        <Label>Account</Label>
+                        <ComboBox Width="75" IsEditable="True" Text="JMEP"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Width="100" Orientation="Horizontal">
+                        <Label>Dest</Label>
+                        <ComboBox Width="75" IsEditable="True" Text="DEFAULT"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Width="100" Orientation="Horizontal">
+                        <Label>Branch</Label>
+                        <ComboBox Width="75" IsEditable="True" Text="MHP"></ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <WrapPanel HorizontalAlignment="Center" Background="LightGray" Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="4">
+                    <Button>Cxl BB</Button>
+                    <Button>Cxl All</Button>
+                    <Button>Cxl BA</Button>
+                </WrapPanel>
+            </Grid>
+        </ToolBar>
+
+
+        <StackPanel Background="LightGray" Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="4">
+
+        </StackPanel>
+        <Grid Grid.Row="2" Background="LightGray" Grid.Column="0"  Grid.ColumnSpan="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -59,7 +119,8 @@
                     <Label.Foreground>
                         <SolidColorBrush Color="Blue"></SolidColorBrush>
                     </Label.Foreground>
-                    +0.01/0.02%</Label>
+                    +0.01/0.02%
+                </Label>
             </StackPanel>
             <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Horizontal">
                 <Label>Volume</Label>
@@ -82,63 +143,9 @@
                 </Label>
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="2" Background="LightGray" Grid.Column="0"  Grid.ColumnSpan="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="23"/>
-                <RowDefinition Height="23"/>
-                <RowDefinition Height="23"/>
-            </Grid.RowDefinitions>
+        <s2:OrderBookTable x:Name="BestBidBook" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></s2:OrderBookTable>
+        <s2:OrderBookTable x:Name="BestAskBook" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"></s2:OrderBookTable>
 
-            <StackPanel Background="LightGray" Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="4">
-                <Button Background="Blue">BUY</Button>
-                <StackPanel Width="100" Orientation="Horizontal">
-                    <Label>Qty</Label>
-                    <ComboBox Width="75" IsEditable="True"></ComboBox>
-                </StackPanel>
-                <StackPanel Width="100" Orientation="Horizontal">
-                    <Label>Price</Label>
-                    <ComboBox Width="75" IsEditable="True"></ComboBox>
-                </StackPanel>
-                <Button Background="Red">SELL</Button>
-                <Button Background="LightGray">Clear</Button>
-            </StackPanel>
-            <StackPanel Background="LightGray" Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="4">
-                <StackPanel Width="100" Orientation="Horizontal">
-                    <Label>O/C</Label>
-                    <ComboBox Width="75" IsEditable="True" Text="CLOSE"></ComboBox>
-                </StackPanel>
-                <StackPanel Width="100" Orientation="Horizontal">
-                    <Label>TIF</Label>
-                    <ComboBox Width="75" IsEditable="True" Text="DAY"></ComboBox>
-                </StackPanel>
-                <StackPanel Width="100" Orientation="Horizontal">
-                    <Label>Account</Label>
-                    <ComboBox Width="75" IsEditable="True" Text="JMEP"></ComboBox>
-                </StackPanel>
-                <StackPanel Width="100" Orientation="Horizontal">
-                    <Label>Dest</Label>
-                    <ComboBox Width="75" IsEditable="True" Text="DEFAULT"></ComboBox>
-                </StackPanel>
-                <StackPanel Width="100" Orientation="Horizontal">
-                    <Label>Branch</Label>
-                    <ComboBox Width="75" IsEditable="True" Text="MHP"></ComboBox>
-                </StackPanel>
-            </StackPanel>
-            <WrapPanel HorizontalAlignment="Center" Background="LightGray" Grid.Row="2" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="4">
-                <Button>Cxl BB</Button>
-                <Button>Cxl All</Button>
-                <Button>Cxl BA</Button>
-            </WrapPanel>
-        </Grid>
-        <StackPanel Background="LightGray" Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="4">
-
-        </StackPanel>
-        <s2:OrderBookTable x:Name="BestBidBook" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"></s2:OrderBookTable>
-        <s2:OrderBookTable x:Name="BestAskBook" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"></s2:OrderBookTable>
-
-        <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4">FLAT</Label>    
+        <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">FLAT</Label>    
     </Grid>
 </Window>
