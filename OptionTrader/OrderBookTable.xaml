@@ -4,36 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
+                     xmlns:s2="clr-namespace:OptionTrader"
              x:Name="OrderBookTableN"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <FlowDocumentReader>
-            <FlowDocument>
-                <Table>
-                    <Table.Columns>
-                        <TableColumn/>
-                        <TableColumn/>
-                        <TableColumn/>
-                        <TableColumn/>
-                    </Table.Columns>
-                    <TableRowGroup>
-                        <TableRow Background="Gray">
-                            <TableCell>
-                                <Paragraph FontSize="12pt">---</Paragraph>
-                            </TableCell>
-                            <TableCell Background="Yellow">
-                                <Paragraph FontSize="12pt">PHLX</Paragraph>
-                            </TableCell>
-                            <TableCell Background="Yellow">
-                                <Paragraph FontSize="12pt">0.66</Paragraph>
-                            </TableCell>
-                            <TableCell Background="Yellow">
-                                <Paragraph FontSize="12pt">405</Paragraph>
-                            </TableCell>
-                        </TableRow>
-                    </TableRowGroup>
-                </Table>
-            </FlowDocument>
-        </FlowDocumentReader>
-    </Grid>
+    <ScrollViewer  VerticalScrollBarVisibility="Visible"  HorizontalScrollBarVisibility="Disabled" Height="195" CanContentScroll="True">
+    <StackPanel>
+
+      <s2:OrderBookTableRow  />
+      <s2:OrderBookTableRow  />
+        <s2:OrderBookTableRow  />
+        <s2:OrderBookTableRow  />
+        <s2:OrderBookTableRow  />
+        <s2:OrderBookTableRow  />
+        <s2:OrderBookTableRow  />
+        <s2:OrderBookTableRow  />
+        <s2:OrderBookTableRow  />
+
+    </StackPanel>
+    </ScrollViewer>
 </UserControl>

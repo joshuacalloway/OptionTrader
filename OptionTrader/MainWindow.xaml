@@ -13,6 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <DockPanel Grid.Row="0" Grid.Column="0">
             <Label DockPanel.Dock="Top" Background="LightGray">Underlying</Label>
@@ -30,8 +31,11 @@
             <Label DockPanel.Dock="Top" Background="LightGray">C/P</Label>
             <ComboBox IsEditable="True"></ComboBox>
         </DockPanel>
-        <s2:OrderBookTable Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></s2:OrderBookTable>
-
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+            <Label Height="100" Background="LightGray">Control panel</Label>
+        </StackPanel>
+        <s2:OrderBookTable x:Name="BestBidBook" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></s2:OrderBookTable>
+        <s2:OrderBookTable x:Name="BestAskBook" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"></s2:OrderBookTable>
 
     </Grid>
 </Window>

@@ -58,6 +58,9 @@
     <Compile Include="OrderBookTable.xaml.cs">
       <DependentUpon>OrderBookTable.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderBookTableRow.xaml.cs">
+      <DependentUpon>OrderBookTableRow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -71,6 +74,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="OrderBookTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderBookTableRow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

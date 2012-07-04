@@ -22,6 +22,12 @@ namespace OptionTrader
         public MainWindow()
         {
            InitializeComponent();
+           populateOrderBookTable();
+        }
+
+        private void populateOrderBookTable()
+        {
+            
         }
     }
 }
